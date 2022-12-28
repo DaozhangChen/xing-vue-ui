@@ -37,6 +37,15 @@ const classes=computed(()=>{
   text-align: center;
   cursor: pointer;
   transition: all 0.25s linear;
+  &[disabled]{
+    cursor: not-allowed;
+    filter: grayscale(100%);
+    &:hover{
+      background: #fff;
+      color: black;
+      border-color: #d9d9d9;
+    }
+  }
   &:hover{
     border-color: var(--main-color);
     color: var(--main-color);
@@ -59,6 +68,15 @@ const classes=computed(()=>{
     border:1px solid #d9d9d9;
     box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
     color: black;
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        background: #fff;
+        color: black;
+        border:1px solid #d9d9d9;
+      }
+    }
   }
   &-theme-default:hover{
     background: #fff;
@@ -70,6 +88,15 @@ const classes=computed(()=>{
     color: white;
     border: 1px solid var(--main-color);
     box-shadow: 0 2px 0 rgb(5 145 255 / 10%);
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        background-color:var(--main-color);
+        color:white;
+        border: 1px solid var(--main-color);
+      }
+    }
   }
   &-theme-primary:hover{
     background-color: var(--main-color-light);
@@ -82,6 +109,15 @@ const classes=computed(()=>{
     border-color:rgb(217,217,217);
     box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
     color: black;
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        background: #fff;
+        color:black;
+        border:1px dashed rgb(217,217,217);
+      }
+    }
   }
   &-theme-dashed:hover{
     background: #fff;
@@ -90,6 +126,13 @@ const classes=computed(()=>{
   }
   &-theme-text{
     border-color: transparent;
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        border-color: transparent;
+      }
+    }
   }
   &-theme-text:hover{
     border-color: transparent;
@@ -99,6 +142,15 @@ const classes=computed(()=>{
     background: transparent;
     border: transparent;
     color: var(--main-color);
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        background: transparent;
+        color:var(--main-color);
+        border:none
+      }
+    }
   }
   &-type-link:hover{
     color: var(--main-color-light);
@@ -159,6 +211,7 @@ const classes=computed(()=>{
       &:hover{
         background: white;
         color: var(--danger-color);
+        border: none;
       }
     }
   }

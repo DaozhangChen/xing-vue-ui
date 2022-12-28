@@ -22,16 +22,17 @@
   </div>
   <hr />
   <h2>disable</h2>
-  <Button theme="primary" disabled="true">primary</Button>
-  <Button theme="default" disabled="true">default</Button>
-  <Button theme="dashed" disabled="true">dashed</Button>
-  <Button theme="text" disabled="true">text</Button>
-  <Button theme="link" disabled="true">link</Button>
-  <Button theme="primary" type="danger" disabled="true">primary</Button>
-  <Button theme="default" type="danger" disabled="true">default</Button>
-  <Button theme="dashed" type="danger" disabled="true">dashed</Button>
-  <Button theme="text" type="danger" disabled="true">text</Button>
-  <Button theme="link" type="danger" disabled="true">link</Button>
+  <Button :disabled="true">button</Button>
+  <Button theme="primary" :disabled=true>primary</Button>
+  <Button theme="default" :disabled=true>default</Button>
+  <Button theme="dashed" :disabled=true>dashed</Button>
+  <Button theme="text" :disabled=true>text</Button>
+  <Button theme="link" :disabled=true>link</Button>
+  <Button theme="primary" type="danger" :disabled=true>primary</Button>
+  <Button theme="default" type="danger" :disabled=true>default</Button>
+  <Button theme="dashed" type="danger" :disabled=true>dashed</Button>
+  <Button theme="text" type="danger" :disabled=true>text</Button>
+  <Button theme="link" type="danger" :disabled=true>link</Button>
   <h1>Switch</h1>
   <Switch />
   <hr>
