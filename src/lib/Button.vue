@@ -1,5 +1,5 @@
 <template>
-<button class="xing-ui-button" :class="classes"><slot /></button>
+<button class="xing-ui-button" :class="classes" :disabled="disabled"><slot /></button>
 </template>
 
 <script setup lang="ts">
@@ -8,13 +8,16 @@ import {computed} from "vue";
 const props = defineProps<{
   size?:'normal'|'big'|'small'
   theme?:'primary'|'default'|'dashed'|'text'|'link'
+  type?:'danger'
+  disabled?:boolean
 }>()
-const {size,theme} = props
+const {size,theme,type} = props
 
 const classes=computed(()=>{
   return {
     [`xing-ui-button-size-${size}`]:size,
-    [`xing-ui-button-theme-${theme}`]:theme
+    [`xing-ui-button-theme-${theme}`]:theme,
+    [`xing-ui-button-type-${type}`]:type,
   }
 })
 
@@ -27,7 +30,6 @@ const classes=computed(()=>{
   border:1px solid #d9d9d9;
   box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
   font-size: 14px;
-  line-height: 24px;
   height: 32px;
   padding: 4px 15px;
   border-radius: 6px;
@@ -45,13 +47,11 @@ const classes=computed(()=>{
   &-size-big{
     height: 40px;
     font-size: 18px;
-    line-height: 32px;
     padding: 4px 18px;
   }
   &-size-small{
     height:24px;
     font-size: 12px;
-    line-height: 16px;
     padding: 4px 13px;
   }
   &-theme-default{
@@ -100,12 +100,48 @@ const classes=computed(()=>{
     border: transparent;
     color: var(--main-color);
   }
-  &-theme-link:hover{
+  &-type-link:hover{
     color: var(--main-color-light);
   }
-
+  &-type-danger{
+    background-color: var(--danger-color);
+    box-shadow:0 2px 0 rgb(255 38 5 / 6%);
+    border-color: var(--danger-color);
+  }
+  &-type-danger.xing-ui-button-theme-default,
+  &-type-danger.xing-ui-button-theme-dashed{
+    color: var(--danger-color);
+    background-color: white;
+  }
+  &-type-danger.xing-ui-button-theme-text{
+    color: var(--danger-color);
+    background-color: white;
+    border: transparent;
+  }
+  &-type-danger.xing-ui-button-theme-link{
+    color: var(--danger-color);
+    background-color: transparent;
+  }
+  &-type-danger:hover{
+    background-color:  var(--danger-color-light);
+    box-shadow:0 2px 0 rgb(255 38 5 / 6%);
+    border-color: var(--danger-color-light);
+  }
+  &-type-danger:hover.xing-ui-button-theme-default:hover,
+  &-type-danger:hover.xing-ui-button-theme-dashed:hover{
+    background-color: white;
+    color: var(--danger-color-light);
+    border-color: var(--danger-color-light);
+  }
+  &-type-danger:hover.xing-ui-button-theme-text:hover{
+    background-color: #fff2f0;
+    color: var(--danger-color-light);
+    border-color: #fff2f0;
+  }
+  &-type-danger:hover.xing-ui-button-theme-link:hover{
+    color: var(--danger-color-light);
+    background-color: transparent;
+  }
+  
 }
-//.xing-ui-button:hover{
-//  background-color: var(--main-color-light);
-//}
 </style>

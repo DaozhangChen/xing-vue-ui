@@ -12,6 +12,14 @@
   <Button theme="text">text</Button>
   <Button theme="link">link</Button>
   <hr>
+  <h2>type</h2>
+  <div class="buttonBackground">
+  <Button theme="primary" type="danger">primary</Button>
+  <Button theme="default" type="danger">default</Button>
+  <Button theme="dashed" type="danger">dashed</Button>
+  <Button theme="text" type="danger">text</Button>
+  <Button theme="link" type="danger">link</Button>
+  </div>
   <h1>Switch</h1>
   <Switch />
   <hr>
@@ -35,5 +43,8 @@ import Tabs from "../lib/Tabs.vue";
 <style lang="scss">
 button{
   margin: 5px 5px;
+}
+.buttonBackground{
+  background-color: gray;
 }
 </style>
