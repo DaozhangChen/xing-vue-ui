@@ -5,6 +5,12 @@
   <Button size="big">bigbig</Button>
   <Button size="normal">normal</Button>
   <Button size="small">small</Button>
+  <h2>theme</h2>
+  <Button theme="primary">primary</Button>
+  <Button theme="default">default</Button>
+  <Button theme="dashed">dashed</Button>
+  <Button theme="text">text</Button>
+  <Button theme="link">link</Button>
   <hr>
   <h1>Switch</h1>
   <Switch />
@@ -19,11 +25,15 @@
 </template>
 
 <script setup lang="ts">
-
-
 import Button from "../lib/Button.vue";
 import Switch from "../lib/Switch.vue";
 import Dialog from "../lib/Dialog.vue";
 import Tab from "../lib/Tab.vue";
 import Tabs from "../lib/Tabs.vue";
 </script>
+
+<style lang="scss">
+button{
+  margin: 5px 5px;
+}
+</style>
