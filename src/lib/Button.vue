@@ -1,5 +1,10 @@
 <template>
-<button class="xing-ui-button" :class="classes" :disabled="disabled"><slot /></button>
+<button class="xing-ui-button" :class="classes" :disabled="disabled">
+  <div class="xing-ui-button-flex">
+<span v-if="loading" class="xing-ui-button-loading"></span>
+  <slot />
+  </div>
+</button>
 </template>
 
 <script setup lang="ts">
@@ -10,6 +15,7 @@ const props = defineProps<{
   theme?:'primary'|'default'|'dashed'|'text'|'link'
   type?:'danger'
   disabled?:boolean
+  loading?:boolean
 }>()
 const {size,theme,type} = props
 
@@ -24,6 +30,12 @@ const classes=computed(()=>{
 </script>
 
 <style lang="scss">
+.xing-ui-button-flex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .xing-ui-button{
   background: #fff;
   color: black;
@@ -57,11 +69,19 @@ const classes=computed(()=>{
     height: 40px;
     font-size: 18px;
     padding: 4px 18px;
+    & .xing-ui-button-loading{
+      width: 18px;
+      height: 18px;
+    }
   }
   &-size-small{
     height:24px;
     font-size: 12px;
     padding: 4px 13px;
+    & .xing-ui-button-loading{
+      width: 12px;
+      height: 12px;
+    }
   }
   &-theme-default{
     background: #fff;
@@ -91,6 +111,9 @@ const classes=computed(()=>{
     &[disabled]{
       cursor: not-allowed;
       filter: grayscale(100%);
+      & .xing-ui-button-loading{
+        border-color: white white white transparent;
+      }
       &:hover{
         background-color:var(--main-color);
         color:white;
@@ -225,6 +248,26 @@ const classes=computed(()=>{
         color: var(--danger-color);
       }
     }
+  }
+  &-loading{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 50%;
+    border-color: var(--main-color) var(--main-color) var(--main-color) transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: xing-spin 1s infinite linear;
+  }
+}
+
+@keyframes xing-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
   }
 }
 

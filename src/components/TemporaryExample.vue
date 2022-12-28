@@ -33,6 +33,15 @@
   <Button theme="dashed" type="danger" :disabled=true>dashed</Button>
   <Button theme="text" type="danger" :disabled=true>text</Button>
   <Button theme="link" type="danger" :disabled=true>link</Button>
+  <hr>
+  <h2>loading</h2>
+  <Button :loading="true">你好</Button>
+  <Button size="big" :loading="true">bigbig</Button>
+  <Button size="normal" :loading="true">normal</Button>
+  <Button size="small" :loading="true">small</Button>
+  <Button theme="primary" size="big" :disabled=true :loading="true">primary</Button>
+  <Button theme="default" :disabled=true :loading="true">default</Button>
+
   <h1>Switch</h1>
   <Switch />
   <hr>
