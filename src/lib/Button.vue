@@ -107,6 +107,14 @@ const classes=computed(()=>{
     background-color: var(--danger-color);
     box-shadow:0 2px 0 rgb(255 38 5 / 6%);
     border-color: var(--danger-color);
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        border-color:var(--danger-color);
+        background-color:var(--danger-color) ;
+      }
+    }
   }
   &-type-danger.xing-ui-button-theme-default,
   &-type-danger.xing-ui-button-theme-dashed{
@@ -132,16 +140,39 @@ const classes=computed(()=>{
     background-color: white;
     color: var(--danger-color-light);
     border-color: var(--danger-color-light);
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        color: var(--danger-color);
+        border-color:var(--danger-color);
+      }
+    }
   }
   &-type-danger:hover.xing-ui-button-theme-text:hover{
     background-color: #fff2f0;
     color: var(--danger-color-light);
     border-color: #fff2f0;
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        background: white;
+        color: var(--danger-color);
+      }
+    }
   }
   &-type-danger:hover.xing-ui-button-theme-link:hover{
     color: var(--danger-color-light);
     background-color: transparent;
+    &[disabled]{
+      cursor: not-allowed;
+      filter: grayscale(100%);
+      &:hover{
+        color: var(--danger-color);
+      }
+    }
   }
-  
 }
+
 </style>
