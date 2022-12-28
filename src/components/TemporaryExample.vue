@@ -6,7 +6,7 @@
   <Button size="normal">normal</Button>
   <Button size="small">small</Button>
   <h2>theme</h2>
-  <Button theme="primary">primary</Button>
+  <Button theme="primary" >primary</Button>
   <Button theme="default">default</Button>
   <Button theme="dashed">dashed</Button>
   <Button theme="text">text</Button>
@@ -37,7 +37,7 @@
   <h2>loading</h2>
   <Button :loading="true">你好</Button>
   <Button size="big" :loading="true">bigbig</Button>
-  <Button size="normal" :loading="true">normal</Button>
+  <Button size="normal" :loading="true" type="danger">normal</Button>
   <Button size="small" :loading="true">small</Button>
   <Button theme="primary" size="big" :disabled=true :loading="true">primary</Button>
   <Button theme="default" :disabled=true :loading="true">default</Button>

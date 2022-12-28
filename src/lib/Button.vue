@@ -109,6 +109,9 @@ const classes=computed(()=>{
     color: white;
     border: 1px solid var(--main-color);
     box-shadow: 0 2px 0 rgb(5 145 255 / 10%);
+    & .xing-ui-button-loading{
+      border-color: white white white transparent;
+    }
     &[disabled]{
       cursor: not-allowed;
       filter: grayscale(100%);
@@ -181,8 +184,12 @@ const classes=computed(()=>{
   }
   &-type-danger{
     background-color: var(--danger-color);
+    color: white;
     box-shadow:0 2px 0 rgb(255 38 5 / 6%);
     border-color: var(--danger-color);
+    & .xing-ui-button-loading{
+      border-color: white white white transparent;
+    }
     &[disabled]{
       cursor: not-allowed;
       filter: grayscale(100%);
@@ -196,17 +203,27 @@ const classes=computed(()=>{
   &-type-danger.xing-ui-button-theme-dashed{
     color: var(--danger-color);
     background-color: white;
+    & .xing-ui-button-loading{
+      border-color: var(--danger-color) var(--danger-color) var(--danger-color) transparent;
+    }
   }
   &-type-danger.xing-ui-button-theme-text{
     color: var(--danger-color);
     background-color: white;
     border: transparent;
+    & .xing-ui-button-loading{
+      border-color: var(--danger-color) var(--danger-color) var(--danger-color) transparent;
+    }
   }
   &-type-danger.xing-ui-button-theme-link{
     color: var(--danger-color);
     background-color: transparent;
+    & .xing-ui-button-loading{
+      border-color: var(--danger-color) var(--danger-color) var(--danger-color) transparent;
+    }
   }
   &-type-danger:hover{
+    color: white;
     background-color:  var(--danger-color-light);
     box-shadow:0 2px 0 rgb(255 38 5 / 6%);
     border-color: var(--danger-color-light);
