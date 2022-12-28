@@ -1,7 +1,7 @@
 <template>
   <h1>Example</h1>
   <h1>Button</h1>
-  <Button />
+  <Button >这是button</Button>
   <hr>
   <h1>Switch</h1>
   <Switch />

@@ -7,6 +7,8 @@ import TemporaryExample from "./components/TemporaryExample.vue";
   <TemporaryExample />
 </template>
 
-<style>
-
+<style lang="scss">
+body{
+  padding: 5px;
+}
 </style>
