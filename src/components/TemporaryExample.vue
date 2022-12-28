@@ -41,6 +41,8 @@
   <Button size="small" :loading="true">small</Button>
   <Button theme="primary" size="big" :disabled=true :loading="true">primary</Button>
   <Button theme="default" :disabled=true :loading="true">default</Button>
+  <hr>
+
 
   <h1>Switch</h1>
   <Switch />

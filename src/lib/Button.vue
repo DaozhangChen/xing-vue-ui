@@ -19,6 +19,7 @@ const props = defineProps<{
 }>()
 const {size,theme,type} = props
 
+
 const classes=computed(()=>{
   return {
     [`xing-ui-button-size-${size}`]:size,
