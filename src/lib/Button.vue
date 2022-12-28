@@ -1,8 +1,20 @@
 <template>
-<button class="xing-ui-button"><slot /></button>
+<button class="xing-ui-button" :class="classes"><slot /></button>
 </template>
 
 <script setup lang="ts">
+import {computed} from "vue";
+
+const props = defineProps<{
+  size?:'normal'|'big'|'small'
+}>()
+const {size} = props
+
+const classes=computed(()=>{
+  return {
+    [`xing-ui-button-size-${size}`]:size
+  }
+})
 
 </script>
 
@@ -20,6 +32,21 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.25s linear;
+  &-size-normal{
+    height: 32px;
+  }
+  &-size-big{
+    height: 40px;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 4px 18px;
+  }
+  &-size-small{
+    height:24px;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 13px;
+  }
 }
 .xing-ui-button:hover{
   background-color: var(--main-color-light);

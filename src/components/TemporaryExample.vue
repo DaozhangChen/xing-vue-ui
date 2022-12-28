@@ -1,7 +1,10 @@
 <template>
   <h1>Example</h1>
   <h1>Button</h1>
-  <Button >这是button</Button>
+  <h2>Size</h2>
+  <Button size="big">bigbig</Button>
+  <Button size="normal">normal</Button>
+  <Button size="small">small</Button>
   <hr>
   <h1>Switch</h1>
   <Switch />
