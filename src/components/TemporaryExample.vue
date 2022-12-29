@@ -49,7 +49,14 @@
   <button @click="controlSwitch">321</button>
   <hr>
   <h1>Dialog</h1>
-  <Dialog />
+  <Dialog :visible="true">
+    <template #title>
+      这是一个标题
+    </template>
+    <template #context>
+      这里面是内容
+    </template>
+  </Dialog>
   <hr>
   <h1>Tab</h1>
   <Tab>
