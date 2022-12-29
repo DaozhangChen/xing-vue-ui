@@ -51,10 +51,10 @@
   <h1>Dialog</h1>
   <Dialog :visible="true">
     <template #title>
-      这是一个标题
+      这是一个标题654654645654654654654654654654654464654
     </template>
     <template #context>
-      这里面是内容
+      这里面是内容3213213121321comecomecomecomecome4654654654654654666546465446
     </template>
   </Dialog>
   <hr>
