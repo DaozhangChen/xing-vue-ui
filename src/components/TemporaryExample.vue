@@ -49,7 +49,7 @@
   <button @click="controlSwitch">321</button>
   <hr>
   <h1>Dialog</h1>
-  <Dialog :visible="true">
+  <Dialog v-model:visible="switchStatus" :close-on-mask="true">
     <template #title>
       这是一个标题654654645654654654654654654654654464654
     </template>

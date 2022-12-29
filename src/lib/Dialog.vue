@@ -1,18 +1,18 @@
 <template>
 <template v-if="visible">
   <Teleport to="body">
-    <div class="xing-ui-dialog-mask"></div>
+    <div class="xing-ui-dialog-mask" @click="clickMask"></div>
     <div class="xing-ui-dialog-wrapper">
       <header class="xing-ui-dialog-header">
         <slot name="title" />
-        <Close class="xing-ui-dialog-close"/>
+        <Close class="xing-ui-dialog-close" @click="close"/>
       </header>
       <main class="xing-ui-dialog-main">
         <slot name="context" />
       </main>
       <footer class="xing-ui-dialog-footer">
-        <Button theme="primary">OK</Button>
-        <Button>Cancel</Button>
+        <Button theme="primary" @click="okClick">OK</Button>
+        <Button @click="cancelClick">Cancel</Button>
       </footer>
     </div>
   </Teleport>
@@ -25,8 +25,27 @@ import Button from "./Button.vue";
 
 const props=defineProps<{
   visible?:boolean
+  closeOnMask?:boolean
+  okClick?:()=>void
+  cancelClick?:()=>void
 }>()
-
+const emit = defineEmits<{
+  (e:'update:visible',visible:boolean):void
+}>()
+const close=()=>{
+  emit('update:visible',false)
+}
+const okClick=()=>{
+  close()
+}
+const cancelClick=()=>{
+  close()
+}
+const clickMask=()=>{
+  if (props.closeOnMask){
+    close()
+  }
+}
 </script>
 
 <style lang="scss">
