@@ -8,7 +8,7 @@
         <Close class="xing-ui-dialog-close" @click="close"/>
       </header>
       <main class="xing-ui-dialog-main">
-        <slot name="context" />
+        <slot name="content" />
       </main>
       <footer class="xing-ui-dialog-footer">
         <Button theme="primary" @click="okClick">OK</Button>

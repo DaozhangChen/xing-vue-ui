@@ -53,10 +53,11 @@
     <template #title>
       这是一个标题654654645654654654654654654654654464654
     </template>
-    <template #context>
+    <template #content>
       这里面是内容3213213121321comecomecomecomecome4654654654654654666546465446
     </template>
   </Dialog>
+  <Button @click="clickDialog">openDialog</Button>
   <hr>
   <h1>Tab</h1>
   <Tab>
@@ -71,9 +72,17 @@ import Dialog from "../lib/Dialog.vue";
 import Tab from "../lib/Tab.vue";
 import Tabs from "../lib/Tabs.vue";
 import {ref} from "vue";
+import {openDialog} from "../lib/openDialog";
 const switchStatus=ref(false)
 const controlSwitch=()=>{
   switchStatus.value=!switchStatus.value
+}
+const clickDialog=()=>{
+  openDialog({
+    title:'这是函数式调用',
+    content:'这是内容',
+    closeOnMask:true
+  })
 }
 </script>
 
