@@ -42,10 +42,11 @@
   <Button theme="primary" size="big" :disabled=true :loading="true">primary</Button>
   <Button theme="default" :disabled=true :loading="true">default</Button>
   <hr>
-
-
   <h1>Switch</h1>
-  <Switch />
+  <Switch :value="switchStatus" />
+  <Switch v-model:value="switchStatus" />
+  <Switch v-model:value="switchStatus" :disabled="true"/>
+  <button @click="controlSwitch">321</button>
   <hr>
   <h1>Dialog</h1>
   <Dialog />
@@ -62,6 +63,11 @@ import Switch from "../lib/Switch.vue";
 import Dialog from "../lib/Dialog.vue";
 import Tab from "../lib/Tab.vue";
 import Tabs from "../lib/Tabs.vue";
+import {ref} from "vue";
+const switchStatus=ref(false)
+const controlSwitch=()=>{
+  switchStatus.value=!switchStatus.value
+}
 </script>
 
 <style lang="scss">
