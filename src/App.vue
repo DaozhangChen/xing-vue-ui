@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TemporaryExample from "./components/TemporaryExample.vue";
+import TemporaryExample from "./example/TemporaryExample.vue";
 </script>
 
 <template>
