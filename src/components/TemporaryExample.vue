@@ -60,9 +60,11 @@
   <Button @click="clickDialog">openDialog</Button>
   <hr>
   <h1>Tab</h1>
-  <Tab>
-    <Tabs />
-  </Tab>
+  <Tabs v-model:selected="x">
+    <Tab title="导航一">这是</Tab>
+    <Tab title="导航二">一个</Tab>
+    <Tab title="导航三">Tabs</Tab>
+  </Tabs>
 </template>
 
 <script setup lang="ts">
@@ -74,6 +76,7 @@ import Tabs from "../lib/Tabs.vue";
 import {ref} from "vue";
 import {openDialog} from "../lib/openDialog";
 const switchStatus=ref(false)
+const x =ref()
 const controlSwitch=()=>{
   switchStatus.value=!switchStatus.value
 }
