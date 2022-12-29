@@ -51,13 +51,19 @@ const props=defineProps<{
     padding: 20px 24px;
     border-radius: 8px;
     z-index: 2;
+    @media (max-width: 700px) {
+      width: 80%;
+    }
     & .xing-ui-dialog-close{
       position: absolute;
       top: 20px;
       right: 20px;
       width: 20px;
       height: 20px;
-
+      cursor: pointer;
+      &:hover{
+        background: rgba(220,220,220,0.5);
+      }
     }
     & .xing-ui-dialog-header{
       font-weight: 600;
@@ -67,6 +73,7 @@ const props=defineProps<{
       margin-bottom: 10px;
     }
     & .xing-ui-dialog-main{
+      color: rgba(0,0,0,0.88);
       word-break: break-word;
       margin-bottom: 10px;
     }
