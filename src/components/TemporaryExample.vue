@@ -76,7 +76,7 @@ import Tabs from "../lib/Tabs.vue";
 import {ref} from "vue";
 import {openDialog} from "../lib/openDialog";
 const switchStatus=ref(false)
-const x =ref()
+const x =ref('321')
 const controlSwitch=()=>{
   switchStatus.value=!switchStatus.value
 }
