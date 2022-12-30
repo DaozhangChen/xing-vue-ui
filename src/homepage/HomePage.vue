@@ -11,13 +11,36 @@
       </RouterLink>
     </div>
   </div>
+    <div class="cardItem">
+      <div class="card">
+            <span>
+            <Github style="height: 32px;width: 32px"/>
+            </span>
+        <h3>基于React开发</h3>
+        <p>使用了最新的React 18以及hooks进行内容编写，稳定好用</p>
+      </div>
+      <div class="card">
+            <span>
+            <Github style="height: 32px;width: 32px"/>
+            </span>
+        <h3>基于React开发</h3>
+        <p>使用了最新的React 18以及hooks进行内容编写，稳定好用</p>
+      </div>
+      <div class="card">
+            <span>
+            <Github style="height: 32px;width: 32px"/>
+            </span>
+        <h3>基于React开发</h3>
+        <p>使用了最新的React 18以及hooks进行内容编写，稳定好用</p>
+      </div>
+  </div>
 </main>
 </template>
 
 <script setup lang="ts">
-
 import ShareHeader from "./share/ShareHeader.vue";
 import Button from "../lib/Button.vue";
+import Github from '../assets/github.svg'
 </script>
 
 <style lang="scss" scoped>
@@ -45,6 +68,50 @@ import Button from "../lib/Button.vue";
       word-break: break-word;
       margin-bottom: 20px;
     }
+  }
+}
+.cardItem{
+  display: flex;
+  @media (min-width: 700px){
+    column-gap: 40px;
+    padding-inline: 48px ;
+    align-items: stretch;
+    text-align: start;
+  }
+  @media (max-width: 699px) {
+    flex-direction: column;
+  }
+  & .card{
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    padding-inline: 24px;
+    padding-block:20px ;
+    border: 1px solid rgb(240,240,240);
+    transition: box-shadow 0.25s;
+    @media (min-width: 700px){
+      width: 33%;
+    }
+    @media (max-width: 699px) {
+      align-items: center;
+      width: 100%;
+    }
+    & h3{
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    & span{
+      text-align: center;
+    }
+    & p{
+      color: rgba(0,0,0,0.45);
+    }
+  }
+  & .card:hover{
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 2px -2px , rgb(0 0 0 / 12%) 0px 3px 6px 0px,rgb(0 0 0 / 9%) 0px 5px 12px 4px;
   }
 }
 </style>
