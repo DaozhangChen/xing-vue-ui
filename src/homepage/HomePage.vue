@@ -40,7 +40,6 @@
 <script setup lang="ts">
 import ShareHeader from "./share/ShareHeader.vue";
 import Button from "../lib/Button.vue";
-import Github from '../assets/github.svg'
 import Bag from '../assets/bag.svg'
 import Vue from '../assets/vue.svg'
 import Component from '../assets/component.svg'
@@ -118,7 +117,7 @@ import Component from '../assets/component.svg'
       }
     }
     & .card:hover{
-      box-shadow: rgb(0 0 0 / 16%) 0px 1px 2px -2px , rgb(0 0 0 / 12%) 0px 3px 6px 0px,rgb(0 0 0 / 9%) 0px 5px 12px 4px;
+      box-shadow: rgb(0 0 0 / 16%) 0 1px 2px -2px , rgb(0 0 0 / 12%) 0px 3px 6px 0px,rgb(0 0 0 / 9%) 0px 5px 12px 4px;
     }
   }
 }
