@@ -14,5 +14,7 @@ const props = defineProps<{
 .style{
   font-size: 16px;
   font-weight: 300;
+  border: 2px solid var(--main-color);
+  border-radius: 3px;
 }
 </style>

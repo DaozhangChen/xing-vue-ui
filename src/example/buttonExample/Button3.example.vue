@@ -6,11 +6,20 @@
   <Button theme="dashed" type="danger">dashed</Button>
   <Button theme="text" type="danger">text</Button>
   <Button theme="link" type="danger">link</Button>
+  <HighLight :code="code" />
 </template>
 
 <script setup lang="ts">
-
 import Button from "../../lib/Button.vue";
+import HighLight from "../../homepage/share/highLight.vue";
+
+const code = `<template>
+  <Button theme="primary" type="danger"> primary </Button>
+  <Button theme="default" type="danger"> default </Button>
+  <Button theme="dashed" type="danger"> dashed </Button>
+  <Button theme="text" type="danger"> text </Button>
+  <Button theme="link" type="danger"> link </Button>
+</template>`
 </script>
 
 <style lang="scss">
