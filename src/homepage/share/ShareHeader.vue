@@ -1,13 +1,14 @@
 <template>
 <header class="layoutHeader">
+  <Menu class="icon" v-show="currentPath === 'introduction' && currentWidth<=700"/>
   <router-link to="/">
     <div class="iconAndTitle">
       <img src="../../assets/logo.png" class="mainLogo" />
-      <h2> XING UI</h2>
+      <h2 v-show="currentPath !=='introduction' || currentWidth > 700 && currentPath ==='introduction'"> XING UI</h2>
     </div>
   </router-link>
   <div class="headerRight">
-    <ul>
+    <ul v-show="currentPath !=='introduction' || currentWidth > 700 && currentPath ==='introduction'">
       <li>React版</li>
     </ul>
     <a target="_blank" href="https://github.com/DaozhangChen/Xing-react-ui"><GitHub class="icon"/></a>
@@ -17,6 +18,18 @@
 
 <script setup lang="ts">
 import GitHub from '../../assets/github.svg'
+import Menu from '../../assets/menu.svg'
+import { onMounted, ref, watch} from "vue";
+import {useRoute} from "vue-router";
+const route = useRoute()
+const currentWidth = ref(window.innerWidth)
+const currentPath = ref(route.matched[0].path.substring(1))
+onMounted(()=>{
+  const path = route.matched[0].path.substring(1)
+  window.addEventListener('resize',()=>{
+    currentWidth.value = window.innerWidth
+  })
+})
 
 </script>
 
@@ -27,6 +40,9 @@ import GitHub from '../../assets/github.svg'
   justify-content: space-between;
   height: 64px;
   align-items: center;
+  @media (max-width: 700px){
+    padding: 0 20px;
+  }
   & .iconAndTitle{
     display: flex;
     align-items: center;
@@ -56,16 +72,17 @@ import GitHub from '../../assets/github.svg'
       width: 32px;
       height: 32px;
     }
-    .icon{
-      height: 32px;
-      width: 32px;
-      transition: all 0.25s linear;
-    }
     .icon:hover{
       transform: scale(1.05);
     }
   }
 }
+.icon{
+  height: 32px;
+  width: 32px;
+  transition: all 0.25s linear;
+}
+
 
 
 </style>
