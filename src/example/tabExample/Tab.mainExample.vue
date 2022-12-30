@@ -9,14 +9,27 @@
     <Tab title="导航2">这里是导航二</Tab>
     <Tab title="导航3">这里是导航三</Tab>
   </Tabs>
+  <HighLight :code="code" />
 </template>
 
 <script setup lang="ts">
 import Tabs from "../../lib/Tabs.vue";
 import {ref} from "vue";
 import Tab from "../../lib/Tab.vue";
-
+import HighLight from "../../homepage/share/highLight.vue";
 const selected=ref("导航1")
+const code = `<template>
+  <Tabs v-model:selected="selected">
+    <Tab title="导航1">这里是导航一</Tab>
+    <Tab title="导航2">这里是导航二</Tab>
+    <Tab title="导航3">这里是导航三</Tab>
+  </Tabs>
+</template>
+
+<script setup lang="ts">
+  const selected=ref("导航1")
+<script>
+`
 </script>
 
 <style lang="scss">
