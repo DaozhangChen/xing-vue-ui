@@ -24,7 +24,7 @@ import Close from '../assets/close.svg'
 import Button from "./Button.vue";
 
 const props=defineProps<{
-  visible?:boolean
+  visible:boolean
   closeOnMask?:boolean
   okClick?:()=>void
   cancelClick?:()=>void
@@ -36,9 +36,11 @@ const close=()=>{
   emit('update:visible',false)
 }
 const okClick=()=>{
+  props.okClick?.()
   close()
 }
 const cancelClick=()=>{
+  props.cancelClick?.()
   close()
 }
 const clickMask=()=>{
@@ -98,6 +100,9 @@ const clickMask=()=>{
     }
     & .xing-ui-dialog-footer{
       text-align: right;
+      & button{
+        margin-left: 10px;
+      }
     }
 
   }
