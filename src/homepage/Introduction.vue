@@ -29,9 +29,6 @@ import ShareHeader from "./share/ShareHeader.vue";
 import {componentLists} from "./share/componentLists";
 import {useRoute} from "vue-router";
 import {computed, ref} from "vue";
-const selectList=(name:string)=>{
-  selectedTag.value=name
-}
 
 const selected = computed(()=>{
   const route = useRoute()
@@ -40,6 +37,9 @@ const selected = computed(()=>{
 })
 const selectedTag=ref(selected.value)
 
+const selectList=(name:string)=>{
+  selectedTag.value=name
+}
 
 </script>
 

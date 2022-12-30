@@ -47,7 +47,7 @@ import GitHub from '../../assets/github.svg'
       border-top: 3px solid white;
       border-bottom:3px solid white;
       transition: border-top-color 0.25s linear;
-      margin: 0 10px;
+      margin: 0 20px;
     }
     li:hover{
       border-top-color:var(--main-color);
