@@ -1,6 +1,6 @@
 <template>
 <header class="layoutHeader">
-  <Menu class="icon" v-show="currentPath === 'introduction' && currentWidth<=700"/>
+  <Menu class="icon" v-show="currentPath === 'introduction' && currentWidth<=700" @click="controlAside"/>
   <router-link to="/">
     <div class="iconAndTitle">
       <img src="../../assets/logo.png" class="mainLogo" />
@@ -21,15 +21,25 @@ import GitHub from '../../assets/github.svg'
 import Menu from '../../assets/menu.svg'
 import { onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
+const props= defineProps<{
+  asideVisible?:boolean
+}>()
+const emit = defineEmits<{
+  (e:'update:asideVisible',value:boolean):void
+  (e:'currentWidth',value:number):void
+}>()
 const route = useRoute()
 const currentWidth = ref(window.innerWidth)
 const currentPath = ref(route.matched[0].path.substring(1))
 onMounted(()=>{
-  const path = route.matched[0].path.substring(1)
   window.addEventListener('resize',()=>{
     currentWidth.value = window.innerWidth
+    emit('currentWidth',window.innerWidth)
   })
 })
+const controlAside=()=>{
+  emit('update:asideVisible',!props.asideVisible)
+}
 
 </script>
 
@@ -80,6 +90,7 @@ onMounted(()=>{
 .icon{
   height: 32px;
   width: 32px;
+  cursor: pointer;
   transition: all 0.25s linear;
 }
 
