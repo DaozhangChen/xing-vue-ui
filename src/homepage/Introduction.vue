@@ -9,7 +9,7 @@
   <ul>
     <template v-for="{eName,text} in componentLists">
       <RouterLink :to="/introduction/ + eName">
-      <li :class="{['selected']:selected===eName}">
+      <li :class="{['selected']:selected===eName}" @click="selectList(eName)">
         <span>{{eName.charAt(0).toUpperCase() + eName.substring(1)}}</span>
         <span class="text">{{' ' + text}}</span>
       </li>
@@ -29,14 +29,17 @@ import ShareHeader from "./share/ShareHeader.vue";
 import {componentLists} from "./share/componentLists";
 import {useRoute} from "vue-router";
 import {computed, ref} from "vue";
-const route= useRoute()
-const selectedPath=ref<string>(route.fullPath)
-console.log(selectedPath.value)
+const selectList=(name:string)=>{
+  selectedTag.value=name
+}
 
 const selected = computed(()=>{
-  const result =selectedPath.value.match(/\/introduction\/(.+)/)
+  const route = useRoute()
+  const result =route.fullPath.match(/\/introduction\/(.+)/)
   return result?.[1]
 })
+const selectedTag=ref(selected.value)
+
 
 </script>
 
@@ -48,7 +51,7 @@ const selected = computed(()=>{
     height: calc(100vh - 64px);
     background: white;
     & .selected{
-      background-color:rgba(84,66,225,0.5);
+      background-color:var(--main-color);
     }
     & ul:first-child{
       padding-top: 40px;
