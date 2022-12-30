@@ -18,7 +18,6 @@
   </ul>
 </aside>
 <main class="mainContent">
-  {{selected}}
     <RouterView />
 </main>
   </div>
