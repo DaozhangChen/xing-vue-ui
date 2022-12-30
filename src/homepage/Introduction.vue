@@ -8,15 +8,18 @@
   <div>所有组件</div>
   <ul>
     <template v-for="{eName,text} in componentLists">
-      <li>
+      <RouterLink :to="/introduction/ + eName">
+      <li :class="{['selected']:selected===eName}">
         <span>{{eName.charAt(0).toUpperCase() + eName.substring(1)}}</span>
         <span class="text">{{' ' + text}}</span>
       </li>
+      </RouterLink>
     </template>
   </ul>
 </aside>
 <main class="mainContent">
-    content
+  {{selected}}
+    <RouterView />
 </main>
   </div>
 </template>
@@ -24,6 +27,17 @@
 <script setup lang="ts">
 import ShareHeader from "./share/ShareHeader.vue";
 import {componentLists} from "./share/componentLists";
+import {useRoute} from "vue-router";
+import {computed, ref} from "vue";
+const route= useRoute()
+const selectedPath=ref<string>(route.fullPath)
+console.log(selectedPath.value)
+
+const selected = computed(()=>{
+  const result =selectedPath.value.match(/\/introduction\/(.+)/)
+  return result?.[1]
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -33,6 +47,9 @@ import {componentLists} from "./share/componentLists";
     width: 25%;
     height: calc(100vh - 64px);
     background: white;
+    & .selected{
+      background-color:rgba(84,66,225,0.5);
+    }
     & ul:first-child{
       padding-top: 40px;
       height: 80px;
@@ -59,9 +76,6 @@ import {componentLists} from "./share/componentLists";
     }
     & li:hover{
       background-color:var(--main-color-hover);
-    }
-    & .selected{
-      background-color:rgba(84,66,225,0.5);
     }
   }
   .mainContent{
