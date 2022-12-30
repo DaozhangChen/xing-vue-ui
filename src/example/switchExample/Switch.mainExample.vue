@@ -5,9 +5,12 @@
   <p>现在你就可以控制这个Switch了</p>
   <HighLight :code="code1" />
   <h2>disable</h2>
-  <p>也可以使用disable来使这个开关变得不可交互，当然，你可以主动控制这个不可交互Switch的状态</p>
+  <p>也可以使用disable来使这个开关变得不可交互</p>
+  <p>当然，你也可以主动控制这个Switch的状态</p>
+  <div class="switchAndButton">
   <Switch v-model:value="disabledValue" :disabled="true" />
   <Button theme="primary" @click="controlValue">主动控制</Button>
+  </div>
   <HighLight :code="code2" />
 </template>
 
@@ -45,5 +48,9 @@ const code2 = `<template>
 </script>
 
 <style lang="scss">
+.switchAndButton{
+  display: flex;
+  align-items: center;
+}
 
 </style>

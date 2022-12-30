@@ -20,5 +20,8 @@ const code = `<template>
 </script>
 
 <style lang="scss">
+button{
+  margin: 0 10px ;
+}
 
 </style>
