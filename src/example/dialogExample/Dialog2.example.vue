@@ -1,5 +1,6 @@
 <template>
 <h2>函数式调用</h2>
+  <p>这是函数式调用Dialog，这种方式相较于组件式相比，更为常用，也更方便，只需要填入选项即可使用</p>
   <Button theme="primary" @click="callDialog">函数式调用</Button>
 </template>
 
