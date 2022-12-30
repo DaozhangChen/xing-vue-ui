@@ -6,15 +6,18 @@
   <Button3Example />
   <Button4Example />
   <Button5Example />
+  <HighLight code="console.log('111')"/>
+
 </template>
 
 <script setup lang="ts">
-
 import Button1Example from './Button1.example.vue'
 import Button2Example from './Button2.example.vue'
 import Button3Example from './Button3.example.vue'
 import Button4Example from './Button4.example.vue'
 import Button5Example from './Button5.example.vue'
+import HighLight from '../../homepage/share/highLight.vue'
+
 </script>
 
 <style lang="scss">
