@@ -3,13 +3,15 @@
   <div class="mainWrapper">
 <aside v-show="isVisible || asideVisible" class="mainAside">
   <ul>
-    <li>如何使用</li>
+    <RouterLink to="/introduction/usage">
+    <li :class="{['selected']:selected==='usage'}">如何使用</li>
+    </RouterLink>
   </ul>
   <div>所有组件</div>
   <ul>
     <template v-for="{eName,text} in componentLists">
       <RouterLink :to="/introduction/ + eName">
-      <li :class="{['selected']:selected===eName}" @click="selectList(eName)">
+      <li :class="{['selected']:selected===eName}">
         <span>{{eName.charAt(0).toUpperCase() + eName.substring(1)}}</span>
         <span class="text">{{' ' + text}}</span>
       </li>
@@ -34,13 +36,9 @@ const selected = computed(()=>{
   const result =route.fullPath.match(/\/introduction\/(.+)/)
   return result?.[1]
 })
-const selectedTag=ref(selected.value)
 const currentWidth=ref(window.innerWidth)
 const listenWidth=(value:number)=>{
   currentWidth.value=value
-}
-const selectList=(name:string)=>{
-  selectedTag.value=name
 }
 const asideVisible = computed(()=>{
   if (route.path.substring(1,13) === 'introduction' && currentWidth.value>700){
