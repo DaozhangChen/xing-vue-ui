@@ -10,8 +10,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "outDir": "./dist/types",
     "declaration": true,
+    "declarationDir": "dist/types",
     "lib": [
       "ESNext",
       "DOM"

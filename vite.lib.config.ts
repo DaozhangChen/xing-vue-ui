@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import { resolve } from 'path'
 import svgLoader from "vite-svg-loader";
-import typescript from '@rollup/plugin-typescript'
+// import typescript from '@rollup/plugin-typescript'
+import dts from 'vite-plugin-dts'
 
 
 export default defineConfig({
@@ -22,17 +22,17 @@ export default defineConfig({
                     vue: 'Vue'
                 }
             },
-            plugins: [
-                typescript({
-                    tslib: resolve('typescript'),
-                    // include: resolve(__dirname, 'src/lib/**'),
-                    exclude: [
-                        resolve(__dirname, 'src/homepage/**'),
-                        resolve(__dirname, 'src/example/**'),
-                    ],
-                    outDir: resolve(__dirname, 'dist/types')
-                })
-            ]
+            // plugins: [
+            //     typescript({
+            //         tslib: resolve('typescript'),
+            //         // include: resolve(__dirname, 'src/lib/**'),
+            //         exclude: [
+            //             resolve(__dirname, 'src/homepage/**'),
+            //             resolve(__dirname, 'src/example/**'),
+            //         ],
+            //         outDir: resolve(__dirname, 'dist/types')
+            //     })
+            // ]
         }
     },
     plugins: [
@@ -40,6 +40,6 @@ export default defineConfig({
         svgLoader({
             defaultImport: 'component'
         }),
-        cssInjectedByJsPlugin(),
+        dts()
     ]
 })
