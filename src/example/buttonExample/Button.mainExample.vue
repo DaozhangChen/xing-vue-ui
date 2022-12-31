@@ -26,5 +26,8 @@ import Button5Example from './Button5.example.vue'
 </script>
 
 <style lang="scss">
+ul>li{
+  margin-bottom: 10px;
+}
 
 </style>

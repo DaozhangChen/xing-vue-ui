@@ -9,9 +9,9 @@
   </router-link>
   <div class="headerRight">
     <ul v-show="currentPath !=='introduction' || currentWidth > 700 && currentPath ==='introduction'">
-      <li>React版</li>
+      <li><a target="_blank" href="https://github.com/DaozhangChen/Xing-react-ui">React版</a></li>
     </ul>
-    <a target="_blank" href="https://github.com/DaozhangChen/Xing-react-ui"><GitHub class="icon"/></a>
+    <a target="_blank" href="https://github.com/DaozhangChen/xing-vue-ui"><GitHub class="icon"/></a>
   </div>
 </header>
 </template>
