@@ -10,6 +10,12 @@
     <Tab title="导航3">这里是导航三</Tab>
   </Tabs>
   <HighLight :code="code" />
+  <h2>API说明</h2>
+  <ul>
+    <li><strong>selected</strong>：这个选项用于给用户展示当前的选择的Tab标题，这里通常与v-model一起使用，并且当值与一个ref关联时，建议ref的初始值为当前Tab的其中一个title的值，否则会出现错误</li>
+    <li><strong>title</strong>：这个选项用于自定义导航栏的标题，只能为字符串</li>
+    <li><strong>children</strong>：这个选项是用于控制Tab的自定义内容</li>
+  </ul>
 </template>
 
 <script setup lang="ts">
