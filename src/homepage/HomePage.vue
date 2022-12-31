@@ -1,7 +1,7 @@
 <template>
   <ShareHeader />
 <main class="mainWrapper">
-  <video src="../assets/background.mp4" class="backgroundVideo" autoplay="autoplay" loop="loop" muted="muted" />
+  <video src="../assets/background.mp4" class="backgroundVideo" :autoplay="true" :loop="true" :muted="true" />
   <div class="outerMainText">
     <div class="mainSlogan">
       <h1>Xing UI</h1>
@@ -40,9 +40,9 @@
 <script setup lang="ts">
 import ShareHeader from "./share/ShareHeader.vue";
 import Button from "../lib/Button.vue";
-import Bag from '../assets/bag.svg'
-import Vue from '../assets/vue.svg'
-import Component from '../assets/component.svg'
+import Bag from '../assets/bag.svg?component'
+import Vue from '../assets/vue.svg?component'
+import Component from '../assets/component.svg?component'
 </script>
 
 <style lang="scss" scoped>

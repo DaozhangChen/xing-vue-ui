@@ -2,12 +2,12 @@
   <div class="xing-ui-tabs">
     <div class="xing-ui-tabs-nav" ref="container">
       <div class="xing-ui-tabs-nav-item" v-for="(t, index) in titles"
-           :ref="el => { if (t === selected) selectedItem = el }" @click="select(t)" :class="{ selected: t === selected }"
-           :key="index">{{ t }}</div>
+        :ref="el => { if (t === selected) selectedItem = el }" @click="select(t)" :class="{ selected: t === selected }"
+        :key="index">{{ t }}</div>
       <div class="xing-ui-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="xing-ui-tabs-content">
-      <component :is="current" :key="current.props.title" />
+      <component :is="current" :key="current?.props?.title" />
     </div>
   </div>
 </template>
@@ -21,12 +21,12 @@ import {
   onMounted,
   useSlots
 } from 'vue'
-import type {Component} from 'vue'
+import type { Component } from 'vue'
 const props = defineProps<{ selected: string }>()
 const emit = defineEmits<{
   (e: 'update:selected', title: string): void;
 }>()
-const selectedItem = ref<HTMLDivElement>()
+const selectedItem = ref()
 const indicator = ref<HTMLDivElement>()
 const container = ref<HTMLDivElement>()
 onMounted(() => {
@@ -68,23 +68,28 @@ const select = (title: string) => {
 <style lang="scss">
 $color: #333;
 $border-color: #d9d9d9;
+
 .xing-ui-tabs {
   &-nav {
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
     position: relative;
+
     &-item {
       padding: 8px 0;
       margin: 0 16px;
       cursor: pointer;
+
       &:first-child {
         margin-left: 0;
       }
+
       &.selected {
         color: var(--main-color);
       }
     }
+
     &-indicator {
       position: absolute;
       height: 3px;
@@ -95,6 +100,7 @@ $border-color: #d9d9d9;
       transition: all 250ms;
     }
   }
+
   &-content {
     padding: 8px 0;
   }
