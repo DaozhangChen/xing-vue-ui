@@ -6,6 +6,14 @@
   <Button3Example />
   <Button4Example />
   <Button5Example />
+  <h2>API说明</h2>
+  <ul>
+    <li><strong>Size</strong>：用于控制Button的大小，有三个选项分别是 'big'|'normal'|'small'，分别对应大、中、小按钮</li>
+    <li><strong>Theme</strong>：用于控制Button的样式，一共有五个选项分别是 'primary'|'default'|'dashed'|'text'|'link'，样式可以查看上面的说明</li>
+    <li><strong>Type</strong>：用于选择危险按钮，目前只有一个danger选项，用于把Button变为红色的Button</li>
+    <li><strong>Disable</strong>：用于控制Button是否可以被用户交互，当disable的值为true时，则Button不可交互</li>
+    <li><strong>Loading</strong>：用于控制Button是否处于加载状态，loading值为true时，则处于Loading状态</li>
+  </ul>
 </template>
 
 <script setup lang="ts">
