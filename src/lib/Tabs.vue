@@ -21,7 +21,6 @@ import {
   onMounted,
   useSlots
 } from 'vue'
-import type { Component } from 'vue'
 const props = defineProps<{ selected: string }>()
 const emit = defineEmits<{
   (e: 'update:selected', title: string): void;
