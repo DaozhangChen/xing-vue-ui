@@ -12,6 +12,11 @@
   <Button theme="primary" @click="controlValue">主动控制</Button>
   </div>
   <HighLight :code="code2" />
+  <h2>API说明</h2>
+  <ul>
+    <li><strong>visible</strong>：这个选项用于控制Switch组件的开启与关闭状态，通常与v-model一起使用，当visible值为true时则为开启状态，反之为关闭状态</li>
+    <li><strong>disabled</strong>：这个选项用于控制Switch是否与用户交互，当disabled值为true时，则为不可交互状态</li>
+  </ul>
 </template>
 
 <script setup lang="ts">
