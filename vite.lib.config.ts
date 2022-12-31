@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import svgLoader from "vite-svg-loader";
 // import typescript from '@rollup/plugin-typescript'
 import dts from 'vite-plugin-dts'
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 
 export default defineConfig({
@@ -40,6 +41,7 @@ export default defineConfig({
         svgLoader({
             defaultImport: 'component'
         }),
+        cssInjectedByJsPlugin(),
         dts()
     ]
 })

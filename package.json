@@ -1,14 +1,13 @@
 {
   "name": "xing-vue-ui",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.5",
   "type": "module",
   "main": "./dist/xing-vue-ui.umd.cjs",
   "module": "./dist/xing-vue-ui.js",
   "typings": "./dist/lib/index.d.ts",
   "files": [
-    "dist",
-    "src/assets/close.svg"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
