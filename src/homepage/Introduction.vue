@@ -115,6 +115,7 @@ const navClose = () => {
 
     @media (max-width: 700px) {
       width: 100%;
+      padding: 32px 20px;
     }
   }
 }
