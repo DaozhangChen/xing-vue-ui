@@ -19,7 +19,7 @@
         </template>
       </ul>
     </aside>
-    <main class="mainContent" @click="navClose">
+    <main class="mainContent" @click="navClose" ref="refContent">
       <RouterView />
     </main>
   </div>
@@ -32,6 +32,7 @@ import { useRoute } from "vue-router";
 import { computed, ref, watch } from "vue";
 const route = useRoute()
 const isVisible = ref(false)
+const refContent = ref()
 const selected = computed(() => {
   const result = route.fullPath.match(/\/introduction\/(.+)/)
   return result?.[1]
@@ -50,7 +51,9 @@ const navClose = () => {
     isVisible.value = false
   }
 }
-
+watch(selected, () => {
+  refContent.value.scrollTop = 0
+})
 </script>
 
 <style lang="scss" scoped>
