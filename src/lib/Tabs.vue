@@ -85,14 +85,14 @@ $border-color: #d9d9d9;
       }
 
       &.selected {
-        color: var(--main-color);
+        color: rgba(31, 173, 12, 0.82);
       }
     }
 
     &-indicator {
       position: absolute;
       height: 3px;
-      background: var(--main-color);
+      background: rgba(31, 173, 12, 0.82);
       left: 0;
       bottom: -1px;
       width: 100px;
